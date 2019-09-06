@@ -27,12 +27,14 @@ namespace LibLabGames.JoysticksOnFire
 
         public Transform[] enemiesTransformsParents;
         public Transform[] enemiesInterfaces;
-        public Slider[] enemiesLifesSlider;
+        public Image[] enemiesLifesFills;
         public TextMeshProUGUI[] enemiesNamesText;
 
         public Transform heartsParent;
         public GameObject heartPrefab;
         public List<Heart> hearts;
+
+        public Image playerHurtedImage;
 
         public GameObject gameOverDisplay;
 
@@ -126,15 +128,20 @@ namespace LibLabGames.JoysticksOnFire
             }
         }
 
-        public void PlayerHitted()
+        public void PlayerHurted()
         {
             currentPlayerLife--;
             hearts[currentPlayerLife].Disable();
+
+            // playerHurtedImage.gameObject.SetActive(true);
+            // playerHurtedImage.color = Color.clear;
 
             if (currentPlayerLife <= 0)
                 GameOver();
         }
 
+        private bool mouseControl;
+        private Vector3 mousePos;
         private void Update()
         {
             if (!gameHasStarted) return;
@@ -149,6 +156,23 @@ namespace LibLabGames.JoysticksOnFire
             if (Input.GetButtonDown("FireRight"))
             {
                 crosswireRight.Fire();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                mouseControl = !mouseControl;
+                LLLog.Log("GameManager", string.Format("Mouse Control : {0}", mouseControl));
+            }
+            if (mouseControl)
+            {
+                mousePos = Input.mousePosition;
+                mousePos.z = 10;
+                crosswireLeft.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+                
+                if (Input.GetMouseButton(0))
+                {
+                    crosswireLeft.Fire();
+                }
             }
         }
 

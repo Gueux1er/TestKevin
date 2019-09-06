@@ -5,7 +5,7 @@ EnemySpawnCountdownMin;5
 EnemySpawnCountdownMax;10
 EnemyLife_Frog;15
 EnemyAttack_Frog;6
-EnemyLife_Goblin;20
+EnemyLife_Goblin;25
 EnemyAttack_Goblin;4
-EnemyLife_Imp;30
+EnemyLife_Imp;20
 EnemyAttack_Imp;4

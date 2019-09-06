@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 5d6d48b4ac5494745ac00de5ab50345e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4265655387803887229
+    second: weapon_gladius_0
+  - first:
+      213: 9082494958322026385
+    second: weapon_gladius_1
+  - first:
+      213: -2443508065532121490
+    second: weapon_gladius_2
+  - first:
+      213: 8530865948498661183
+    second: weapon_gladius_1
+  - first:
+      213: -3448681963199445847
+    second: weapon_gladius_4
+  - first:
+      213: 3199184338759105656
+    second: weapon_gladius_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,11 +102,53 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: weapon_gladius_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 269
+        height: 342
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1748c339779c73c42be93e51da8f7573
+      internalID: 4265655387803887229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_gladius_1
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 0
+        width: 285
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500807b78eab1254e89b15f555e912fb
+      internalID: 8530865948498661183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

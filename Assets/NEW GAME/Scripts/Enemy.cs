@@ -15,6 +15,7 @@ namespace LibLabGames.JoysticksOnFire
         public float countdownAttack;
 
         public Color touchedColor;
+        public Color noTouchedColor;
 
         public int index;
 
@@ -22,6 +23,7 @@ namespace LibLabGames.JoysticksOnFire
 
         public Collider[] colliders;
         public SpriteRenderer enemySprite;
+        public SpriteRenderer enemyTouchSprite;
 
         [System.Serializable]
         public struct Weapon
@@ -33,13 +35,11 @@ namespace LibLabGames.JoysticksOnFire
 
         public Color weaponOnChargeColor;
 
-        private Color baseEnemyColor;
         private Color baseWeaponColor;
 
         private void Start()
         {
-            baseEnemyColor = enemySprite.color;
-            baseWeaponColor = Color.white;
+            baseWeaponColor = weapons[0].spriteRenderers[0].color;
 
             Init();
 
@@ -66,7 +66,7 @@ namespace LibLabGames.JoysticksOnFire
 
             GameManager.instance.enemiesInterfaces[index].gameObject.SetActive(true);
             GameManager.instance.enemiesNamesText[index].text = enemyName;
-            GameManager.instance.enemiesLifesSlider[index].value = currentLife / maxLife;
+            GameManager.instance.enemiesLifesFills[index].fillAmount = currentLife / maxLife;
         }
 
         public bool onChargeAttack;
@@ -123,10 +123,10 @@ namespace LibLabGames.JoysticksOnFire
             if (isDead) return;
 
             currentLife -= strenght;
-            GameManager.instance.enemiesLifesSlider[index].value = currentLife / maxLife;
+            GameManager.instance.enemiesLifesFills[index].fillAmount = currentLife / maxLife;
 
-            enemySprite.DOKill();
-            enemySprite.color = baseEnemyColor;
+            enemyTouchSprite.DOKill();
+            enemyTouchSprite.color = noTouchedColor;
 
             if (currentLife <= 0)
             {
@@ -134,10 +134,10 @@ namespace LibLabGames.JoysticksOnFire
             }
             else
             {
-                enemySprite.DOColor(touchedColor, 0.05f).SetLoops(2, LoopType.Yoyo)
+                enemyTouchSprite.DOColor(touchedColor, 0.05f).SetLoops(2, LoopType.Yoyo)
                     .OnComplete(() =>
                     {
-                        enemySprite.color = baseEnemyColor;
+                        enemyTouchSprite.color = noTouchedColor;
                     });
             }
         }
@@ -160,7 +160,7 @@ namespace LibLabGames.JoysticksOnFire
 
             onChargeAttack = false;
 
-            GameManager.instance.PlayerHitted();
+            GameManager.instance.PlayerHurted();
 
             var t = LLPoolManager.instance.SpawnEnemyAttackParticle(weapons[attackWeaponIndex].spriteRenderers[0].transform);
             t.localPosition = Vector3.zero;

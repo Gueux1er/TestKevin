@@ -6,20 +6,17 @@ using UnityEngine.UI;
 public class Heart : MonoBehaviour
 {
     public Image image;
-    public Shadow shadow;
 
-    public Color activeColor;
-    public Color disableColor;
+    public Sprite activeHeartSprite;
+    public Sprite disableHeartSprite;
 
     public void Active()
     {
-        image.color = activeColor;
-        shadow.enabled = true;
+        image.sprite = activeHeartSprite;
     }
 
     public void Disable()
     {
-        image.color = disableColor;
-        shadow.enabled = false;
+        image.sprite = disableHeartSprite;
     }
 }
