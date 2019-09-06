@@ -133,8 +133,10 @@ namespace LibLabGames.JoysticksOnFire
             currentPlayerLife--;
             hearts[currentPlayerLife].Disable();
 
-            // playerHurtedImage.gameObject.SetActive(true);
-            // playerHurtedImage.color = Color.clear;
+            playerHurtedImage.gameObject.SetActive(true);
+            playerHurtedImage.color = new Color(1,0,0,0);
+            playerHurtedImage.DOColor(new Color(1,0,0,0.5f), 0.05f).SetLoops(4, LoopType.Yoyo)
+                .OnComplete(() => playerHurtedImage.gameObject.SetActive(false));
 
             if (currentPlayerLife <= 0)
                 GameOver();

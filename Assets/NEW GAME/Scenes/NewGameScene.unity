@@ -2213,7 +2213,7 @@ RectTransform:
   - {fileID: 1841501347}
   - {fileID: 1246534203}
   m_Father: {fileID: 1743521383}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2412,46 +2412,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2016793680192308496, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -205270267638800340, guid: a0c77708a3af41d4ab8a1b31725f3551,
-        type: 3}
-    - target: {fileID: 2016793680192308496, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2016793680192308496, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2016793680192308496, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 918739450272295256, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: shadow
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 918739450272295256, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: activeHeartSprite
-      value: 
-      objectReference: {fileID: -205270267638800340, guid: a0c77708a3af41d4ab8a1b31725f3551,
-        type: 3}
-    - target: {fileID: 918739450272295256, guid: a44970cf64282da44be73b4bdda477bd,
-        type: 3}
-      propertyPath: disableHeartSprite
-      value: 
-      objectReference: {fileID: 7904136456745960365, guid: a0c77708a3af41d4ab8a1b31725f3551,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 2016793680192308497, guid: a44970cf64282da44be73b4bdda477bd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a44970cf64282da44be73b4bdda477bd, type: 3}
 --- !u!224 &1622641445 stripped
 RectTransform:
@@ -2705,8 +2666,8 @@ RectTransform:
   - {fileID: 832084696}
   - {fileID: 1381318427}
   - {fileID: 788783626}
-  - {fileID: 1460212202}
   - {fileID: 2107832230}
+  - {fileID: 1460212202}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3477,7 +3438,7 @@ GameObject:
   - component: {fileID: 2107832232}
   - component: {fileID: 2107832231}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PlayerHearted Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3495,7 +3456,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1743521383}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3788,6 +3749,11 @@ PrefabInstance:
       propertyPath: enemiesLifesFills.Array.data[2]
       value: 
       objectReference: {fileID: 450452622}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerHurtedImage
+      value: 
+      objectReference: {fileID: 2107832231}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eec4ba884a7403f4484acbc0e92d1a4a, type: 3}
 --- !u!1001 &5505783679740808542
